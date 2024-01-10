@@ -67,6 +67,7 @@ function Country() {
     <>
       <div
         style={{
+          fontFamily: "Nunito Sans",
           height: "100vh",
           backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)",
           color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
@@ -103,7 +104,6 @@ function Country() {
         >
           <div
             style={{
-              // height: "400px",
               width: "400px",
               backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)",
               color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",

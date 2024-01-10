@@ -9,6 +9,8 @@ function Element(props) {
     <div
       className="contentdata"
       style={{
+        lineHeight: "25px",
+        fontWeight: "600",
         backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)",
         color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
         marginRight: "30px",

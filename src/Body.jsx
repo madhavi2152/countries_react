@@ -124,6 +124,8 @@ function Body({ id }) {
     <div
       className="body"
       style={{
+        fontFamily: "Nunito Sans",
+        paddingTop: "50px",
         backgroundColor: mode ? "hsl(0, 0%, 98%)" : " hsl(207, 26%, 17%)",
         color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
       }}
@@ -134,17 +136,18 @@ function Body({ id }) {
           setVisibility((prev) => !prev);
         }}
         style={{
+          fontWeight: "600",
+          borderRadius: "10px",
           border: "1px solid gray",
           backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
           color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
         }}
       >
-        search for a region
+        filter by region
         <ul
           id="ull"
           style={{
             display: Visibility ? "block" : "none",
-            backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
             color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
           }}
           onClick={(data) => {
@@ -164,7 +167,6 @@ function Body({ id }) {
           className="SubRegion"
           style={{
             display: SubVisibility ? "block" : "none",
-            backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
             color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
           }}
           onClick={(data) => {
@@ -184,12 +186,14 @@ function Body({ id }) {
       <div
         class="filter"
         style={{
+          borderRadius: "10px",
           textDecoration: "none",
           border: "1px solid gray",
-          width: "50px",
-          height: "20px",
-          padding: "0.25em",
-          marginRight: "100px",
+          width: "80px",
+          height: "27px",
+          marginRight: "80px",
+          paddingLeft: "30px",
+          fontWeight: "600",
         }}
         onClick={(data) => {
           setPopulationFlag((prev) => !prev);
@@ -218,9 +222,10 @@ function Body({ id }) {
           style={{
             border: "none",
             textDecoration: "none",
-            backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
+            backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(207, 26%, 17%)",
             color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
-            marginTop: "10px",
+            marginTop: "15px",
+            marginLeft: "-60px",
           }}
         >
           <button
@@ -229,12 +234,13 @@ function Body({ id }) {
               display: PopulationFlag ? "block" : "none",
               border: "none",
               textDecoration: "none",
-              width: "150px",
-              height: "50px",
-              backgroundColor: mode
-                ? "hsl(0, 0%, 100%)"
-                : " hsl(209, 23%, 22%)",
+              width: "170px",
+              height: "30px",
+              backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)",
               color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+              border: "1px solid gray",
+              borderTop: "none",
+              borderRadius: "10px",
             }}
           >
             ascending by population
@@ -245,10 +251,13 @@ function Body({ id }) {
               display: PopulationFlag ? "block" : "none",
               border: "none",
               textDecoration: "none",
-              backgroundColor: mode
-                ? "hsl(0, 0%, 100%)"
-                : " hsl(209, 23%, 22%)",
+              backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)",
               color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+              width: "170px",
+              height: "30px",
+              border: "1px solid gray",
+              borderTop: "none",
+              borderRadius: "10px",
             }}
           >
             {" "}
@@ -258,13 +267,13 @@ function Body({ id }) {
         <button
           className="area"
           style={{
-            backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
+            backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)",
             color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
             border: "none",
             textDecoration: "none",
-            width: "150px",
-            backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
+            backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(207, 26%, 17%)",
             color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+            marginLeft: "-60px",
           }}
         >
           <button
@@ -273,11 +282,15 @@ function Body({ id }) {
               display: AreaFlag ? "block" : "none",
               border: "none",
               textDecoration: "none",
-              width: "150px",
+              width: "170px",
+              height: "30px",
               backgroundColor: mode
                 ? "hsl(0, 0%, 100%)"
-                : " hsl(209, 23%, 22%)",
+                : " hsl(207, 26%, 17%)",
               color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+              border: "1px solid gray",
+              borderTop: "none",
+              borderRadius: "10px",
             }}
           >
             {" "}
@@ -288,12 +301,16 @@ function Body({ id }) {
             style={{
               display: AreaFlag ? "block" : "none",
               border: "none",
-              width: "150px",
+              width: "170px",
+              height: "30px",
               textDecoration: "none",
               backgroundColor: mode
                 ? "hsl(0, 0%, 100%)"
-                : " hsl(209, 23%, 22%)",
+                : " hsl(207, 26%, 17%)",
               color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+              border: "1px solid gray",
+              borderTop: "none",
+              borderRadius: "10px",
             }}
           >
             {" "}
@@ -312,9 +329,11 @@ function Body({ id }) {
         }}
         placeholder="search by country"
         style={{
+          fontWeight: "bold",
+          borderRadius: "10px",
           border: "1px solid gray",
-          backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
-          color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+          backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(207, 26%, 17%)",
+          color: mode ? "black" : "hsl(0, 0%, 100%)",
         }}
       />
       <div
@@ -351,6 +370,7 @@ function Body({ id }) {
         <button
           className="region"
           style={{
+            fontWeight: "bold",
             border: "1px solid gray",
             backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
             color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
@@ -378,14 +398,20 @@ function Body({ id }) {
           type="text"
           placeholder="search by country"
           style={{
+            fontWeight: "bold",
             border: "1px solid gray",
             backgroundColor: mode ? "hsl(0, 0%, 100%)" : " hsl(209, 23%, 22%)",
             color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+            borderRadius: "10px",
           }}
         />
         <div
           className="content"
-          style={{ paddingLeft: "80px", paddingRight: "50px" }}
+          style={{
+            paddingTop: "10px",
+            paddingLeft: "80px",
+            paddingRight: "50px",
+          }}
         ></div>
       </div>
     </h1>

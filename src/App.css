@@ -1,3 +1,6 @@
+body {
+  font-family: Nunito Sans;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -27,6 +30,9 @@ header {
     width: 100%;
     padding-bottom: 30px;
   }
+  span {
+    font-weight: 300;
+  }
 }
 .body {
   padding: 20px;
@@ -42,6 +48,12 @@ header {
   width: 150px;
   height: 30px;
 }
+#filterInput {
+  background: url("./search.svg");
+  background-repeat: no-repeat;
+  padding-left: 30px;
+}
+
 .region {
   ul {
     margin-top: 51px;
@@ -80,4 +92,24 @@ button {
 }
 .darkmode:hover {
   cursor: pointer;
+}
+.area:hover {
+  cursor: pointer;
+}
+#populationascending:hover {
+  cursor: pointer;
+}
+#populationdecending:hover {
+  cursor: pointer;
+}
+#areaascending:hover {
+  cursor: pointer;
+}
+#areadecending:hover {
+  cursor: pointer;
+}
+.darkmode {
+  background: url("./nightmode.svg");
+  background-repeat: no-repeat;
+  padding-left: 30px;
 }
