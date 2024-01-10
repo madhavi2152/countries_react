@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { mycontext } from "./App";
-import { Link, useParams } from "react-router-dom";
-import "./App.css"; // Import the CSS file
+import { Link, useParams, useNavigate } from "react-router-dom";
+import "./App.css";
 
 async function fetchCountry(Id) {
   const res = await fetch(`https://restcountries.com/v3.1/alpha/${Id}`);
@@ -11,6 +11,11 @@ async function fetchCountry(Id) {
 }
 
 function Country() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   const { Id } = useParams();
   const [Country, setCountry] = useState(null);
   let mode = useContext(mycontext);
@@ -73,26 +78,25 @@ function Country() {
           color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
         }}
       >
-        <Link to="/">
-          <button
-            style={{
-              border: "1px solid black",
-              margin: "100px",
-              marginLeft: "200px",
-              width: "100px",
-              height: "50px",
-              padding: 0,
-              textDecoration: "none",
-              background: "none",
-              cursor: "pointer",
-              border: mode ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)",
-              color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
-            }}
-          >
-            {"<--     "}
-            back{" "}
-          </button>
-        </Link>
+        <button
+          style={{
+            border: "1px solid black",
+            margin: "100px",
+            marginLeft: "200px",
+            width: "100px",
+            height: "50px",
+            padding: 0,
+            textDecoration: "none",
+            background: "none",
+            cursor: "pointer",
+            border: mode ? "hsl(209, 23%, 22%)" : "hsl(0, 0%, 100%)",
+            color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
+          }}
+          onClick={handleGoBack}
+        >
+          {"<--     "}
+          back{" "}
+        </button>
         <div
           style={{
             display: "flex",
@@ -119,7 +123,6 @@ function Country() {
           </h1>
           <div
             style={{
-              // height: "200px",
               backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)",
               color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
               display: "flex",
@@ -162,7 +165,28 @@ function Country() {
           </div>
         </div>
         <p style={{ marginLeft: "640px", marginTop: "20px" }}>
-          <strong className="bold-label">Borders:</strong> {border.join(", ")}
+          <strong className="bold-label">Borders:</strong>
+          {border.map((row) => {
+            if (row !== undefined) {
+              return (
+                <Link
+                  to={`/country/${row}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <button
+                    style={{
+                      margin: "10px",
+                      textDecoration: "none",
+                      color: "inherit",
+                      backgroundColor: "inherit",
+                    }}
+                  >
+                    {" " + row + " " + " "}
+                  </button>
+                </Link>
+              );
+            }
+          })}
         </p>
       </div>
     </>
@@ -206,7 +230,6 @@ function Country() {
         >
           <div
             style={{
-              // height: "400px",
               width: "400px",
               backgroundColor: mode ? "hsl(0, 0%, 100%)" : "hsl(209, 23%, 22%)",
               color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",

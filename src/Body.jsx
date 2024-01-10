@@ -165,15 +165,16 @@ function Body({ id }) {
         </ul>
         <div
           className="SubRegion"
-          style={{
-            display: SubVisibility ? "block" : "none",
-            color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
-          }}
           onClick={(data) => {
+            setSubVisibility((prev) => !prev);
             setSubRegionflag(data.target.innerHTML);
           }}
           onMouseOut={(data) => {
             setSubVisibility((prev) => !prev);
+          }}
+          style={{
+            display: SubVisibility ? "block" : "none",
+            color: mode ? "hsl(200, 15%, 8%)" : "hsl(0, 0%, 100%)",
           }}
         >
           {searchRegion
